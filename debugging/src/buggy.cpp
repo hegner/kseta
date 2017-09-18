@@ -21,8 +21,7 @@ class Student {
 
 Student* getStudent(){
   Student* myStudent = new Student(10801983,"Mary Wright");
-// ***** OPS!
-  return nullptr;  
+  return myStudent;  
 }
 
 void printStudent(Student* myStudent){
