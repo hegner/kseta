@@ -73,6 +73,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE
 
 #--- project specific subdirectories -------------------------------------------
 add_subdirectory(mail)
+add_subdirectory(modernsyntax)
 
 #--- create uninstall target ---------------------------------------------------
 include(cmake/ksetaUninstall.cmake)
