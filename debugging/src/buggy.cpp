@@ -27,7 +27,7 @@ Student* getStudent(){
 void printStudent(Student* myStudent){
   std::cout << "-- Student's Data --\n";
   std::cout << "Student's ID is " << myStudent->getName()
-            << " and name is " << myStudent->getID() << std::cout;
+            << " and name is " << myStudent->getID() << std::endl;
 }
 
 int main(){
