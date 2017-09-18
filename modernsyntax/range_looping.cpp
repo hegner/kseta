@@ -21,8 +21,8 @@ protected:
 };
 
 
-void rangeLoop(std::vector<Tool> tools){
-  for(auto tool : tools){
+void rangeLoop(std::vector<Tool>& tools){
+  for(auto&& tool : tools){
     tool.print();
   }
 }
