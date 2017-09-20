@@ -33,5 +33,6 @@ void printStudent(Student* myStudent){
 int main(){
   Student* myStudent = getStudent();
   printStudent(myStudent);
+  delete myStudent;
   return 1;
 }
