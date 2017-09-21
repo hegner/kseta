@@ -13,7 +13,9 @@ void incrementCounter(int* counter, const unsigned int times){
 int main(){
   int counter(0);
   // launch a thread to increment the counter
-  std::thread increment(incrementCounter,&counter,100000);
+  
+  const unsigned int times = 100000;
+  std::thread increment([&times, &counter](){for (unsigned int i=0; i<times;++i){++counter;}});
   increment.join();
   std::cout << counter << std::endl;
   return 0;

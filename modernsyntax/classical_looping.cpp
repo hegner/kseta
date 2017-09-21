@@ -28,7 +28,17 @@ void indexLoop(std::vector<Tool>& tools){
 }
 
 void iteratorLoop(std::vector<Tool>& tools){
-  for(std::vector<Tool>::const_iterator tool = tools.begin(), end = tools.end(); tool != end; ++tool){
+  for(auto tool = tools.begin(), end = tools.end(); tool != end; ++tool){
+    tool->print();
+  }
+}
+
+void rangeLoop(std::vector<Tool>& tools, const int beginning, const int ending){
+  auto tool = tools.begin(), end = tools.end();
+  std::advance(tool,beginning);
+  auto stop_point = std::distance(tools.begin(), end) - ending;
+  
+  for( ; std::distance(tool, end) > stop_point; ++tool){
     tool->print();
   }
 }
@@ -42,6 +52,8 @@ int main(){
   indexLoop(tools);
   std::cout << "Start iterator looping" << std::endl;
   iteratorLoop(tools);
+  std::cout << "Start range looping" << std::endl;
+  rangeLoop(tools, 2, 4);
 
   return 0;
 }

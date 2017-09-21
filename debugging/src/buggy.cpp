@@ -21,18 +21,18 @@ class Student {
 
 Student* getStudent(){
   Student* myStudent = new Student(10801983,"Mary Wright");
-// ***** OPS!
-  return nullptr;  
+  return myStudent;  
 }
 
 void printStudent(Student* myStudent){
   std::cout << "-- Student's Data --\n";
-  std::cout << "Student's ID is " << myStudent->getName()
-            << " and name is " << myStudent->getID() << std::cout;
+  std::cout << "Student's ID is " << myStudent->getID()
+            << " and name is " << myStudent->getName() << std::endl;
 }
 
 int main(){
   Student* myStudent = getStudent();
   printStudent(myStudent);
+  delete myStudent;
   return 1;
 }
