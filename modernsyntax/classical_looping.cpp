@@ -34,9 +34,11 @@ void iteratorLoop(std::vector<Tool>& tools){
 }
 
 void rangeLoop(std::vector<Tool>& tools, const int beginning, const int ending){
-  auto tool = tools.begin();
+  auto tool = tools.begin(), end = tools.end();
   std::advance(tool,beginning);
-  for(auto end = tools.end(); std::distance(tool, end) > std::distance(tools.begin(), end) - ending; ++tool){
+  auto stop_point = std::distance(tools.begin(), end) - ending;
+  
+  for( ; std::distance(tool, end) > stop_point; ++tool){
     tool->print();
   }
 }
